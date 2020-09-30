@@ -1,4 +1,4 @@
-# Links
+# Links and Notes for Placements
 During my preparation for placements, I came across various useful resources for practicing programming problems.
 1. Useful session on [Resume Building]( https://register.gotowebinar.com/recording/383093349775878413) 
 2. Description about all important STLs can be found [here.]( https://github.com/meenakshiravisankar/coding-interview-cpp#algorithms)

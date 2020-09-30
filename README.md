@@ -7,3 +7,12 @@ During my preparation for placements, I came across various useful resources for
 4. Must do Coding Questions on [Geeksforgeeks]( https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/)
 5. Placement Tips at [IIT Kharagpur]( https://medium.com/@sunnydh/placement-preparation-iit-kgp-cse-89d7b7b37de3)
 6. [Leetcode Patterns]( http://seanprashad.com/leetcode-patterns/)
+
+# C++ and OOPs Concepts
+1. Plan to read from GEEKSFORGEEKS and then put here
+
+# Computer Networks
+
+# Operating Systems
+
+# DBMS

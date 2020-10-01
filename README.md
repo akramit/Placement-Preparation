@@ -9,7 +9,7 @@ During my preparation for placements, I came across various useful resources for
 6. [Leetcode Patterns]( http://seanprashad.com/leetcode-patterns/)
 
 # C++ and OOPs Concepts
-1. Plan to read from GEEKSFORGEEKS and then put here
+1. https://www.toptal.com/c-plus-plus/interview-questions
 
 # Computer Networks
 

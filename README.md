@@ -18,3 +18,6 @@ During my preparation for placements, I came across various useful resources for
 # Operating Systems
 
 # DBMS
+
+# Miscellaneous
+1. [Sorting Algorithm Animation](https://www.toptal.com/developers/sorting-algorithms)

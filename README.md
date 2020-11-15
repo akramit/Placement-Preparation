@@ -30,3 +30,4 @@ During my preparation for placements, I came across various useful resources for
 4. [Top Interview Questions](https://www.geeksforgeeks.org/top-25-interview-questions/)
 5. [Algorithm Questions](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/?ref=rp)
 6. [Amazon Interview](https://www.geeksforgeeks.org/amazon-interview-questions/?ref=rp)
+5. [Puzzles](https://www.geeksforgeeks.org/category/puzzles/)

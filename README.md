@@ -22,7 +22,11 @@ During my preparation for placements, I came across various useful resources for
 # Miscellaneous
 1. [Sorting Algorithm Animation](https://www.toptal.com/developers/sorting-algorithms)
 2. [Amazon Debugging](https://www.evernote.com/client/snv?noteGuid=d0047552-4cff-4c29-b305-b8aa2d33f364&noteKey=636f07d57c2eb3ea&var=b&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs683%2Fsh%2Fd0047552-4cff-4c29-b305-b8aa2d33f364%2F636f07d57c2eb3ea&exp=ENB3907&title=Amazon%2BOA1%2BDebugging)
-3. [Amazon List of questions](https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions)
+
+# Interview
+1. [Amazon List of questions](https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions)
 4. [Top Interview Questions](https://www.geeksforgeeks.org/top-25-interview-questions/)
 5. [Algorithm Questions](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/?ref=rp)
 6. [Amazon Interview](https://www.geeksforgeeks.org/amazon-interview-questions/?ref=rp)
+7. [Operating System](https://www.geeksforgeeks.org/commonly-asked-operating-systems-interview-questions-set-1/)
+5. [Computer Networks](https://www.geeksforgeeks.org/commonly-asked-computer-networks-interview-questions-set-1/)

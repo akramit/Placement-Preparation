@@ -8,6 +8,7 @@ During my preparation for placements, I came across various useful resources for
 5. Placement Tips at [IIT Kharagpur]( https://medium.com/@sunnydh/placement-preparation-iit-kgp-cse-89d7b7b37de3)
 6. [Leetcode Patterns]( http://seanprashad.com/leetcode-patterns/)
 7. [Amazon Question Bank](https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions)
+8. [LeetCode Blind 75](https://leetcode.com/discuss/interview-question/460599/Blind-75-LeetCode-Questions)
 
 # C++ and OOPs Concepts
 1. https://www.toptal.com/c-plus-plus/interview-questions

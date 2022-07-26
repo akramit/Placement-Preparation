@@ -30,3 +30,6 @@ During my preparation for placements, I came across various useful resources for
 5. [Algorithm Questions](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/?ref=rp)
 6. [Amazon Interview](https://www.geeksforgeeks.org/amazon-interview-questions/?ref=rp)
 5. [Puzzles](https://www.geeksforgeeks.org/category/puzzles/)
+6. [NeetCode](https://neetcode.io)
+7. [Grind75](https://www.techinterviewhandbook.org/grind75)
+8. [Leetcode Patterns](https://seanprashad.com/leetcode-patterns/)

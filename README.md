@@ -40,9 +40,11 @@ During my preparation for placements, I came across various useful resources for
 ## Binary Search
 ## Hashing
 ## Linked List
-1. Reverse Linked List 
-2. Find Intersection of Y 
-3. Detect Cycle https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/
+1. Rotate LinkedList https://www.geeksforgeeks.org/rotate-a-linked-list/ 
+1. Reverse Linked List https://www.geeksforgeeks.org/reverse-a-linked-list/
+2. Find Intersection of Y https://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/ 
+3. Detect Cycle https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/ 
+4. Detect and Remove Cycle https://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/ 
 ## Stacks
 1. Parenthesis
 ## Queues

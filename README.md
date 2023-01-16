@@ -33,3 +33,34 @@ During my preparation for placements, I came across various useful resources for
 6. [NeetCode](https://neetcode.io)
 7. [Grind75](https://www.techinterviewhandbook.org/grind75)
 8. [Leetcode Patterns](https://seanprashad.com/leetcode-patterns/)
+
+# Questions 
+## Array
+## Strings
+## Binary Search
+## Hashing
+## Linked List
+1. Reverse Linked List 
+2. Find Intersection of Y 
+3. Detect Cycle https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/
+## Stacks
+1. Parenthesis
+## Queues
+## Greedy 
+1. Job Scheduling
+## Dynamic Programming
+1. Maximum Sum Subarray
+2. Longest Common Subsequence
+3. Edit Distance
+4. Coin Change (min coins and max no of ways to obtain amount)
+5. Longest Pallindromic Subsequence
+6. 0-1 Knapsack
+7. Subset Sum
+## Graphs
+1. BFS
+2. DFS
+3. Cycle in Undirected Graph, Directed Graph
+4. Topological Sorting 
+5. Shortest Path (Dijkstra)
+6. Minimum Spanning Tree
+## Miscellaneous

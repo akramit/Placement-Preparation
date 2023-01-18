@@ -34,10 +34,14 @@ During my preparation for placements, I came across various useful resources for
 7. [Grind75](https://www.techinterviewhandbook.org/grind75)
 8. [Leetcode Patterns](https://seanprashad.com/leetcode-patterns/)
 
-# Questions 
+# Topic Wise DS-Algorithm Questions 
 ## Array
 ## Strings
+## Two Pointers
+1. Container with most water https://www.geeksforgeeks.org/container-with-most-water/ 
+2. 3 Sum
 ## Binary Search
+1. Search in Rotated Sorted Array https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
 ## Hashing
 ## Linked List
 1. Rotate LinkedList https://www.geeksforgeeks.org/rotate-a-linked-list/ 
@@ -58,11 +62,19 @@ During my preparation for placements, I came across various useful resources for
 5. Longest Pallindromic Subsequence
 6. 0-1 Knapsack
 7. Subset Sum
+## Trees
+1. Invert Tree, Height of Tree, BST Search, 
+2. Identical Trees https://www.geeksforgeeks.org/write-c-code-to-determine-if-two-trees-are-identical/
+2. Lowest Common Ancestor https://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/
+3. Diameter of Tree https://www.geeksforgeeks.org/diameter-of-a-binary-tree/
+4. Maximum Path Sum https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/
+5. Level Order Traversal https://www.geeksforgeeks.org/level-order-tree-traversal/
 ## Graphs
 1. BFS
 2. DFS
 3. Cycle in Undirected Graph, Directed Graph
 4. Topological Sorting 
+5. Shortest Path using BFS
 5. Shortest Path (Dijkstra)
 6. Minimum Spanning Tree
 ## Miscellaneous

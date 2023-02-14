@@ -78,3 +78,11 @@ During my preparation for placements, I came across various useful resources for
 5. Shortest Path (Dijkstra)
 6. Minimum Spanning Tree
 ## Miscellaneous
+
+#System Design 
+1. GitHub Repo - https://github.com/akramit/system-design-primer
+1. https://github.com/arpitbbhayani 
+2. [Alex Xu](system-design.pdf)
+3. https://medium.com/system-design-blog
+4. [Uber Blog](https://www.uber.com/en-SG/blog/engineering/)
+5. [Martin Fowler](https://martinfowler.com/tags/microservices.html)

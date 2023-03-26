@@ -78,6 +78,7 @@ During my preparation for placements, I came across various useful resources for
 5. Shortest Path (Dijkstra)
 6. Minimum Spanning Tree
 ## Miscellaneous
+1. Backtracking - NQueens https://leetcode.com/problems/n-queens/
 
 #System Design 
 1. GitHub Repo - https://github.com/akramit/system-design-primer

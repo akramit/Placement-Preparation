@@ -12,7 +12,9 @@ During my preparation for placements, I came across various useful resources for
 # C++ and OOPs Concepts
 1. https://www.toptal.com/c-plus-plus/interview-questions
 1. https://www.geeksforgeeks.org/c-cpp-tricky-programs/
-
+# Java Videos
+1. https://www.linkedin.com/feed/update/urn:li:activity:7048473240330997761/
+2. Contains Spring etc.
 # Computer Networks
 1. [Computer Networks](https://www.geeksforgeeks.org/commonly-asked-computer-networks-interview-questions-set-1/)
 

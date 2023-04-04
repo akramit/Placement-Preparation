@@ -89,3 +89,9 @@ During my preparation for placements, I came across various useful resources for
 3. https://medium.com/system-design-blog
 4. [Uber Blog](https://www.uber.com/en-SG/blog/engineering/)
 5. [Martin Fowler](https://martinfowler.com/tags/microservices.html)
+6. InterviewBit - https://www.interviewbit.com/system-design-interview-questions/
+
+## Design
+1. Tiny URL - http://n00tc0d3r.blogspot.com 
+i. Algorithm - https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener 
+

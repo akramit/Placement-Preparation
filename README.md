@@ -93,5 +93,6 @@ During my preparation for placements, I came across various useful resources for
 
 ## Design
 1. Tiny URL - http://n00tc0d3r.blogspot.com 
-i. Algorithm - https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener 
+- Algorithm - https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener 
+2. SQL vs NoSQL - https://www.sitepoint.com/sql-vs-nosql-differences/
 

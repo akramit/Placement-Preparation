@@ -35,6 +35,9 @@ During my preparation for placements, I came across various useful resources for
 6. [NeetCode](https://neetcode.io)
 7. [Grind75](https://www.techinterviewhandbook.org/grind75)
 8. [Leetcode Patterns](https://seanprashad.com/leetcode-patterns/)
+9. https://github.com/williamfiset/Algorithms
+10. CPP STLs - https://github.com/meenakshiravisankar/coding-interview-cpp
+11. https://github.com/kaushal02/interview-coding-problems
 
 # Topic Wise DS-Algorithm Questions 
 ## Array

@@ -22,6 +22,7 @@ During my preparation for placements, I came across various useful resources for
 1. [Operating System](https://www.geeksforgeeks.org/commonly-asked-operating-systems-interview-questions-set-1/)
 
 # DBMS
+1. SQL practice from InterviewBit and W3Schools - https://www.w3schools.com/sql/default.asp
 
 # Miscellaneous
 1. [Sorting Algorithm Animation](https://www.toptal.com/developers/sorting-algorithms)

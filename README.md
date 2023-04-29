@@ -15,6 +15,7 @@ During my preparation for placements, I came across various useful resources for
 # Java Videos
 1. https://www.linkedin.com/feed/update/urn:li:activity:7048473240330997761/
 2. Contains Spring etc.
+3. Java Collections - https://www.callicoder.com/java-arraylist/
 # Computer Networks
 1. [Computer Networks](https://www.geeksforgeeks.org/commonly-asked-computer-networks-interview-questions-set-1/)
 

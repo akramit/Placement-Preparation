@@ -87,8 +87,8 @@ During my preparation for placements, I came across various useful resources for
 ## Miscellaneous
 1. Backtracking - NQueens https://leetcode.com/problems/n-queens/
 
-#System Design 
-1. GitHub Repo - https://github.com/donnemartin/system-design-primer
+# System Design 
+1. GitHub Repo - [Donne Marting](https://github.com/donnemartin/system-design-primer)
 1. https://github.com/arpitbbhayani 
 2. [Alex Xu](system-design.pdf)
 3. https://medium.com/system-design-blog

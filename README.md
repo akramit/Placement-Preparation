@@ -9,6 +9,10 @@ During my preparation for placements, I came across various useful resources for
 6. [Leetcode Patterns]( http://seanprashad.com/leetcode-patterns/)
 8. [LeetCode Blind 75](https://leetcode.com/discuss/interview-question/460599/Blind-75-LeetCode-Questions)
 
+## STLs
+1. CPP STLs - https://github.com/meenakshiravisankar/coding-interview-cpp
+2. Python STLS - [Python](/python-ds.py)
+
 # C++ and OOPs Concepts
 1. https://www.toptal.com/c-plus-plus/interview-questions
 1. https://www.geeksforgeeks.org/c-cpp-tricky-programs/
@@ -39,7 +43,9 @@ During my preparation for placements, I came across various useful resources for
 8. [Leetcode Patterns](https://seanprashad.com/leetcode-patterns/)
 9. https://github.com/williamfiset/Algorithms
 10. CPP STLs - https://github.com/meenakshiravisankar/coding-interview-cpp
-11. https://github.com/kaushal02/interview-coding-problems
+11. 
+12. https://github.com/kaushal02/interview-coding-problems
+
 
 # Topic Wise DS-Algorithm Questions 
 ## Array

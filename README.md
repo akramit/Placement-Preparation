@@ -83,7 +83,7 @@ During my preparation for placements, I came across various useful resources for
     - amount : n , denoms = [1,...,m] -> P1: min coins to achieve n, P2: no. of ways to obtain n
     - P1 : coin[i][j] = min no. of coins to obtain amount j using denoms 1 to i
     - coin[i][j] = 
-    - P2 :
+    - P2 : No of ways ( including ordering) to obtain target [link](https://leetcode.com/problems/combination-sum-iv/description/)
 5. Longest Increasing Subsequence
    - lis[i] - longest increasing subsequence ending at i
    - lis[i] = max(lcs[i], 1 + lcs[j]) for j < i and arr[j] < arr[i]

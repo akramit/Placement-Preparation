@@ -69,12 +69,33 @@ During my preparation for placements, I came across various useful resources for
 1. Job Scheduling
 ## Dynamic Programming
 1. Maximum Sum Subarray
+    - max_sum[i] = max(arr[i], arr[i]+max_sum[i-1])
+    - O(n)
 2. Longest Common Subsequence
+   - lcs[i][j] = 1 + lcs[i-1][j-1]  if str1[i] = str2[j]
+   - lcs[i][j] = max(lcs[i-1][j], lcs[i][j-1]) if str1[i] != str2[j]
+   - O(n^2) - space can be reduced to just O(n)
 3. Edit Distance
-4. Coin Change (min coins and max no of ways to obtain amount)
-5. Longest Pallindromic Subsequence
-6. 0-1 Knapsack
-7. Subset Sum
+   - edit[i][j] = 1 + edit[i-1][j-1] if str1[i] = str2[j]
+   - edit[i][j] = max(edit[i-1][j], edit[i][j-1]) if str1[i] != str2[j]
+   - O(n^2) 
+4. Coin Change (min coins and max no of ways to obtain amount) **IMP**
+    - amount : n , denoms = [1,...,m] -> P1: min coins to achieve n, P2: no. of ways to obtain n
+    - P1 : coin[i][j] = min no. of coins to obtain amount j using denoms 1 to i
+    - coin[i][j] = 
+    - P2 :
+5. Longest Increasing Subsequence
+   - lis[i] - longest increasing subsequence ending at i
+   - lis[i] = max(lcs[i], 1 + lcs[j]) for j < i and arr[j] < arr[i]
+   - O(n^2)
+   - O(nlog n ) solution - [link](https://leetcode.com/problems/longest-increasing-subsequence/submissions/408293540/)
+6. Longest Pallindromic Subsequence
+   - lps[i][j] = 2 + lps[i+1][j-1] if s[i] == s[j] else max(lps[i+1][j], lps[i][j-1], lps[i+1][j-1])
+   - Go from len = 1 to n, i.e. lps[i][i+l]
+   - O(n^2)
+9. 0-1 Knapsack
+10. 
+11. Subset Sum
 ## Trees
 1. Invert Tree, Height of Tree, BST Search, 
 2. Identical Trees https://www.geeksforgeeks.org/write-c-code-to-determine-if-two-trees-are-identical/

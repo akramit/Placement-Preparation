@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Longest Increasing Subsequence</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <nav class="crumbs"><a href="../index.html">Dynamic Programming</a></nav>
+    <h1>Longest Increasing Subsequence</h1>
+    <p class="lede">Longest subsequence that is strictly increasing. The classic DP is <code>O(n²)</code>. A patience-sorting view is <code>O(n log n)</code>.</p>
+
+    <h2>Problem</h2>
+    <p>Given an array of numbers, return the length of the longest subsequence that is strictly increasing. The chosen indices must increase, and so must the values.</p>
+
+    <h2>Idea</h2>
+    <p><code>lis[i]</code> is the longest increasing subsequence that ends at index <code>i</code>. It is at least 1, the element alone. It can also extend any earlier subsequence that ends with a smaller value.</p>
+    <p>The faster method keeps <code>tails[k]</code>: the smallest tail of any increasing subsequence of length <code>k + 1</code> seen so far. <code>tails</code> stays sorted. A new value either extends the longest subsequence or replaces the first tail it can improve, which leaves more room for later extensions. The length of <code>tails</code> is the answer. The array itself is not one subsequence.</p>
+
+    <h2>Recurrence</h2>
+    <p><code>lis[i] = 1</code>, then for every <code>j &lt; i</code> with <code>arr[j] &lt; arr[i]</code>:</p>
+    <p><code>lis[i] = max(lis[i], 1 + lis[j])</code></p>
+    <p>The answer is <code>max(lis)</code>. Time <code>O(n²)</code>.</p>
+    <p>For the <code>O(n log n)</code> method, binary-search <code>tails</code> for the first entry that is greater than or equal to <code>arr[i]</code> and replace it. If none exists, append <code>arr[i]</code>.</p>
+
+    <h2>Algorithm</h2>
+    <ol>
+      <li>Quadratic version: for each index, scan every earlier index and extend when the value is smaller.</li>
+      <li>Logarithmic version: maintain the sorted <code>tails</code> list and update it with one binary search per element.</li>
+      <li>Return the maximum <code>lis[i]</code>, or the length of <code>tails</code>.</li>
+    </ol>
+
+    <h2>Worked example</h2>
+    <p>Array: <code>[10, 9, 2, 5, 3, 7, 101, 18]</code>. One longest subsequence is <code>[2, 3, 7, 101]</code>, length 4. <code>[2, 5, 7, 18]</code> is another.</p>
+    <p><code>lis</code> values: <code>[1, 1, 1, 2, 2, 3, 4, 4]</code>.</p>
+    <p><code>tails</code> after each element:</p>
+    <table>
+      <thead>
+        <tr><th>value</th><th>tails afterward</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>10</td><td>[10]</td></tr>
+        <tr><td>9</td><td>[9]</td></tr>
+        <tr><td>2</td><td>[2]</td></tr>
+        <tr><td>5</td><td>[2, 5]</td></tr>
+        <tr><td>3</td><td>[2, 3]</td></tr>
+        <tr><td>7</td><td>[2, 3, 7]</td></tr>
+        <tr><td>101</td><td>[2, 3, 7, 101]</td></tr>
+        <tr><td>18</td><td>[2, 3, 7, 18]</td></tr>
+      </tbody>
+    </table>
+    <p><code>3</code> replaces <code>5</code> because a subsequence of length 2 can now end smaller. <code>18</code> replaces <code>101</code> for the same reason. The length stays 4.</p>
+
+    <h2>Complexity</h2>
+    <p>DP: time <code>O(n²)</code>, space <code>O(n)</code>. Binary search on tails: time <code>O(n log n)</code>, space <code>O(n)</code>.</p>
+
+    <h2>Python</h2>
+    <pre><code>import bisect
+
+
+def lis_quadratic(arr):
+    lis = [1] * len(arr)
+    for i in range(len(arr)):
+        for j in range(i):
+            if arr[j] &lt; arr[i]:
+                lis[i] = max(lis[i], lis[j] + 1)
+    return max(lis, default=0)
+
+
+def lis_nlogn(arr):
+    tails = []
+    for x in arr:
+        i = bisect.bisect_left(tails, x)
+        if i == len(tails):
+            tails.append(x)
+        else:
+            tails[i] = x
+    return len(tails)</code></pre>
+  </main>
+</body>
+</html>

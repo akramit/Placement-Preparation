@@ -68,34 +68,43 @@ During my preparation for placements, I came across various useful resources for
 ## Greedy 
 1. Job Scheduling
 ## Dynamic Programming
-1. Maximum Sum Subarray
+Write-ups with a worked example and Python: [Dynamic Programming](docs/index.html). Live site: https://akramit.github.io/Placement-Preparation/
+1. [Maximum Sum Subarray](docs/dp/maximum-sum-subarray.html)
     - max_sum[i] = max(arr[i], arr[i]+max_sum[i-1])
     - O(n)
-2. Longest Common Subsequence
+2. [Longest Common Subsequence](docs/dp/longest-common-subsequence.html)
    - lcs[i][j] = 1 + lcs[i-1][j-1]  if str1[i] = str2[j]
    - lcs[i][j] = max(lcs[i-1][j], lcs[i][j-1]) if str1[i] != str2[j]
    - O(n^2) - space can be reduced to just O(n)
-3. Edit Distance
-   - edit[i][j] = 1 + edit[i-1][j-1] if str1[i] = str2[j]
-   - edit[i][j] = max(edit[i-1][j], edit[i][j-1]) if str1[i] != str2[j]
-   - O(n^2) 
-4. Coin Change (min coins and max no of ways to obtain amount) **IMP**
-    - amount : n , denoms = [1,...,m] -> P1: min coins to achieve n, P2: no. of ways to obtain n
-    - P1 : coin[i][j] = min no. of coins to obtain amount j using denoms 1 to i
-    - coin[i][j] = 
-    - P2 : No of ways ( including ordering) to obtain target [link](https://leetcode.com/problems/combination-sum-iv/description/)
-5. Longest Increasing Subsequence
+3. [Edit Distance](docs/dp/edit-distance.html)
+   - edit[i][0] = i, edit[0][j] = j
+   - edit[i][j] = edit[i-1][j-1] if str1[i] = str2[j]
+   - edit[i][j] = 1 + min(edit[i-1][j], edit[i][j-1], edit[i-1][j-1]) if str1[i] != str2[j]
+   - O(n^2)
+4. [Coin Change](docs/dp/coin-change.html) (min coins and number of ways) **IMP**
+    - amount n, denoms of size m. Each coin may be reused.
+    - P1 min coins: dp[a] = min(dp[a - c] + 1) over coins c <= a, dp[0] = 0
+    - P2 combinations (order ignored): for each coin, then for amount upward, dp[a] += dp[a - c]
+    - P3 permutations (order counts): [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/). For each amount, then each coin, dp[a] += dp[a - c]
+5. [Longest Increasing Subsequence](docs/dp/longest-increasing-subsequence.html)
    - lis[i] - longest increasing subsequence ending at i
-   - lis[i] = max(lcs[i], 1 + lcs[j]) for j < i and arr[j] < arr[i]
+   - lis[i] = max(lis[i], 1 + lis[j]) for j < i and arr[j] < arr[i]
+   - O(n^2). O(n log n) keeps the smallest tail of every subsequence length and binary-searches it
+6. [Longest Palindromic Subsequence](docs/dp/longest-palindromic-subsequence.html)
+   - lps[i][i] = 1
+   - lps[i][j] = 2 + lps[i+1][j-1] if s[i] == s[j] (inside is 0 when j = i+1)
+   - else lps[i][j] = max(lps[i+1][j], lps[i][j-1])
+   - Fill by substring length from 1 to n
    - O(n^2)
-   - O(nlog n ) solution - [link](https://leetcode.com/problems/longest-increasing-subsequence/submissions/408293540/)
-6. Longest Pallindromic Subsequence
-   - lps[i][j] = 2 + lps[i+1][j-1] if s[i] == s[j] else max(lps[i+1][j], lps[i][j-1], lps[i+1][j-1])
-   - Go from len = 1 to n, i.e. lps[i][i+l]
-   - O(n^2)
-9. 0-1 Knapsack
+9. [0-1 Knapsack](docs/dp/knapsack.html)
+   - dp[i][c] = best value using the first i items and capacity c
+   - dp[i][c] = max(dp[i-1][c], dp[i-1][c - w[i]] + v[i]) when the item fits
+   - O(n * W). Scan a 1D table downward so each item is used at most once
 10. 
-11. Subset Sum
+11. [Subset Sum](docs/dp/subset-sum.html)
+    - dp[t] is true if some subset sums to t. dp[0] = true
+    - for each number x, for t from T down to x: dp[t] = dp[t] or dp[t - x]
+    - O(n * T)
 ## Trees
 1. Invert Tree, Height of Tree, BST Search, 
 2. Identical Trees https://www.geeksforgeeks.org/write-c-code-to-determine-if-two-trees-are-identical/

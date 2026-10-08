@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maximum Sum Subarray</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <nav class="crumbs"><a href="../index.html">Dynamic Programming</a></nav>
+    <h1>Maximum Sum Subarray</h1>
+    <p class="lede">Kadane’s algorithm. Find a contiguous subarray whose sum is as large as possible.</p>
+
+    <h2>Problem</h2>
+    <p>Given an array of numbers that may contain negatives, return the largest sum of any contiguous subarray. The subarray must contain at least one element.</p>
+
+    <h2>Idea</h2>
+    <p>Any best subarray that ends at index <code>i</code> either is just <code>arr[i]</code>, or is the best subarray ending at <code>i - 1</code> with <code>arr[i]</code> stuck on the end. If the running sum so far is negative, it can only hurt the next element, so throw it away and start over at <code>arr[i]</code>.</p>
+
+    <h2>Recurrence</h2>
+    <p><code>max_sum[i] = max(arr[i], arr[i] + max_sum[i - 1])</code></p>
+    <p>The answer is the largest <code>max_sum[i]</code>. Only the previous value is needed, so the table collapses to two variables.</p>
+
+    <h2>Algorithm</h2>
+    <ol>
+      <li>Set both the running sum and the best sum to <code>arr[0]</code>.</li>
+      <li>For each later element, replace the running sum with the larger of the element itself and the element plus the running sum.</li>
+      <li>If that running sum beats the best sum, keep it.</li>
+      <li>After one pass, the best sum is the answer.</li>
+    </ol>
+
+    <h2>Worked example</h2>
+    <p>Array: <code>[-2, 1, -3, 4, -1, 2, 1, -5, 4]</code></p>
+    <table>
+      <thead>
+        <tr><th>i</th><th>arr[i]</th><th>running</th><th>best</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>-2</td><td>-2</td><td>-2</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>2</td><td>-3</td><td>-2</td><td>1</td></tr>
+        <tr><td>3</td><td>4</td><td>4</td><td>4</td></tr>
+        <tr><td>4</td><td>-1</td><td>3</td><td>4</td></tr>
+        <tr><td>5</td><td>2</td><td>5</td><td>5</td></tr>
+        <tr><td>6</td><td>1</td><td>6</td><td>6</td></tr>
+        <tr><td>7</td><td>-5</td><td>1</td><td>6</td></tr>
+        <tr><td>8</td><td>4</td><td>5</td><td>6</td></tr>
+      </tbody>
+    </table>
+    <p>The best subarray is <code>[4, -1, 2, 1]</code>, sum <code>6</code>. At index 2 the running sum goes negative, so index 3 starts a new candidate.</p>
+
+    <h2>Complexity</h2>
+    <p>Time <code>O(n)</code>. Extra space <code>O(1)</code>.</p>
+
+    <h2>Python</h2>
+    <pre><code>def max_subarray(arr):
+    best = running = arr[0]
+    for x in arr[1:]:
+        running = max(x, running + x)
+        best = max(best, running)
+    return best</code></pre>
+  </main>
+</body>
+</html>

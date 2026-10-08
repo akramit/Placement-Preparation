@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Distance</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <nav class="crumbs"><a href="../index.html">Dynamic Programming</a></nav>
+    <h1>Edit Distance</h1>
+    <p class="lede">Minimum insertions, deletions, and substitutions that turn one string into another. Also called Levenshtein distance.</p>
+
+    <h2>Problem</h2>
+    <p>Given strings <code>s1</code> and <code>s2</code>, return the fewest single-character edits that transform <code>s1</code> into <code>s2</code>. An edit is an insert, a delete, or a replace.</p>
+
+    <h2>Idea</h2>
+    <p><code>edit[i][j]</code> is the distance between the first <code>i</code> characters of <code>s1</code> and the first <code>j</code> characters of <code>s2</code>. The last characters are either already equal, or one edit has to account for them.</p>
+    <ul>
+      <li>If they match, copy the distance of the prefixes before them. No new edit.</li>
+      <li>If they differ, pay 1 and choose the cheapest of three predecessors: delete from <code>s1</code> (<code>edit[i - 1][j]</code>), insert into <code>s1</code> (<code>edit[i][j - 1]</code>), or replace (<code>edit[i - 1][j - 1]</code>).</li>
+    </ul>
+    <p>This is a minimum, not a maximum. The LCS recurrence does not apply here.</p>
+
+    <h2>Recurrence</h2>
+    <p>If <code>s1[i - 1] == s2[j - 1]</code>: <code>edit[i][j] = edit[i - 1][j - 1]</code></p>
+    <p>Otherwise: <code>edit[i][j] = 1 + min(edit[i - 1][j], edit[i][j - 1], edit[i - 1][j - 1])</code></p>
+    <p>Base cases: <code>edit[i][0] = i</code> (delete everything) and <code>edit[0][j] = j</code> (insert everything).</p>
+
+    <h2>Algorithm</h2>
+    <ol>
+      <li>Fill the first row and first column with <code>0, 1, 2, …</code>.</li>
+      <li>For every other cell, apply the match or the three-way minimum.</li>
+      <li><code>edit[n][m]</code> is the distance.</li>
+    </ol>
+
+    <h2>Worked example</h2>
+    <p><code>s1 = "cat"</code>, <code>s2 = "cut"</code>. Replace <code>a</code> with <code>u</code>. Distance 1.</p>
+    <table>
+      <thead>
+        <tr><th></th><th>""</th><th>c</th><th>u</th><th>t</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>""</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+        <tr><th>c</th><td>1</td><td>0</td><td>1</td><td>2</td></tr>
+        <tr><th>a</th><td>2</td><td>1</td><td>1</td><td>2</td></tr>
+        <tr><th>t</th><td>3</td><td>2</td><td>2</td><td>1</td></tr>
+      </tbody>
+    </table>
+    <p>Cell <code>(a, u)</code> is a mismatch, so it costs <code>1 + min(1, 1, 0) = 1</code>. Cell <code>(t, t)</code> matches, so it copies the diagonal <code>1</code>.</p>
+
+    <h2>Complexity</h2>
+    <p>Time <code>O(n · m)</code>. Space <code>O(n · m)</code>, or <code>O(min(n, m))</code> when only the distance is required.</p>
+
+    <h2>Python</h2>
+    <pre><code>def edit_distance(s1, s2):
+    n, m = len(s1), len(s2)
+    prev = list(range(m + 1))
+    for i in range(1, n + 1):
+        cur = [i] + [0] * m
+        for j in range(1, m + 1):
+            if s1[i - 1] == s2[j - 1]:
+                cur[j] = prev[j - 1]
+            else:
+                cur[j] = 1 + min(prev[j], cur[j - 1], prev[j - 1])
+        prev = cur
+    return prev[m]</code></pre>
+  </main>
+</body>
+</html>

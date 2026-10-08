@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Longest Common Subsequence</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <nav class="crumbs"><a href="../index.html">Dynamic Programming</a></nav>
+    <h1>Longest Common Subsequence</h1>
+    <p class="lede">Longest sequence that appears in both strings, in the same order, not necessarily contiguous.</p>
+
+    <h2>Problem</h2>
+    <p>Given two strings, return the length of their longest common subsequence. Characters may be skipped, but the relative order of the ones that are kept must match in both strings.</p>
+
+    <h2>Idea</h2>
+    <p>Compare the strings from the left, one character at a time. <code>lcs[i][j]</code> is the LCS length of the first <code>i</code> characters of the first string and the first <code>j</code> characters of the second.</p>
+    <p>If the current characters match, they belong in some optimal subsequence, so take both and add 1 to the answer for the prefixes before them. If they differ, at least one of them is useless for the optimum, so try dropping each end and keep the better result.</p>
+
+    <h2>Recurrence</h2>
+    <p>If <code>s1[i - 1] == s2[j - 1]</code>: <code>lcs[i][j] = 1 + lcs[i - 1][j - 1]</code></p>
+    <p>Otherwise: <code>lcs[i][j] = max(lcs[i - 1][j], lcs[i][j - 1])</code></p>
+    <p>Base case: a prefix of length 0 has LCS length 0. Filling row by row uses only the previous row, so the table can be stored in <code>O(min(n, m))</code> space.</p>
+
+    <h2>Algorithm</h2>
+    <ol>
+      <li>Allocate an <code>(n + 1)</code> by <code>(m + 1)</code> table of zeros.</li>
+      <li>For each pair of prefixes, apply the recurrence above.</li>
+      <li><code>lcs[n][m]</code> is the length. To recover one subsequence, walk backward from that cell: a diagonal step means the characters matched and belong in the answer.</li>
+    </ol>
+
+    <h2>Worked example</h2>
+    <p><code>s1 = "ace"</code>, <code>s2 = "abcde"</code>. One LCS is <code>"ace"</code>, length 3.</p>
+    <table>
+      <thead>
+        <tr><th></th><th>""</th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>""</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><th>a</th><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+        <tr><th>c</th><td>0</td><td>1</td><td>1</td><td>2</td><td>2</td><td>2</td></tr>
+        <tr><th>e</th><td>0</td><td>1</td><td>1</td><td>2</td><td>2</td><td>3</td></tr>
+      </tbody>
+    </table>
+    <p>The 1 at <code>(a, a)</code> comes from a match. The 2 at <code>(c, c)</code> adds the shared <code>c</code>. The 3 at the corner adds the shared <code>e</code>.</p>
+
+    <h2>Complexity</h2>
+    <p>Time <code>O(n · m)</code>. Space <code>O(n · m)</code>, or <code>O(min(n, m))</code> if only the length is required.</p>
+
+    <h2>Python</h2>
+    <pre><code>def lcs_length(s1, s2):
+    n, m = len(s1), len(s2)
+    prev = [0] * (m + 1)
+    for i in range(1, n + 1):
+        cur = [0] * (m + 1)
+        for j in range(1, m + 1):
+            if s1[i - 1] == s2[j - 1]:
+                cur[j] = prev[j - 1] + 1
+            else:
+                cur[j] = max(prev[j], cur[j - 1])
+        prev = cur
+    return prev[m]</code></pre>
+  </main>
+</body>
+</html>

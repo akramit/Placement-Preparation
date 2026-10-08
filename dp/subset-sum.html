@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subset Sum</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <nav class="crumbs"><a href="../index.html">Dynamic Programming</a></nav>
+    <h1>Subset Sum</h1>
+    <p class="lede">Decide whether some subset of the numbers adds up to a target. It is 0-1 knapsack with every value equal to its weight, asking only whether the target capacity is reachable.</p>
+
+    <h2>Problem</h2>
+    <p>Given non-negative integers and a target <code>T</code>, return whether any subset sums to exactly <code>T</code>. Each number may be used at most once.</p>
+
+    <h2>Idea</h2>
+    <p><code>dp[t]</code> is true when some subset of the numbers considered so far sums to <code>t</code>. <code>dp[0]</code> is true because the empty subset sums to 0. When a new number <code>x</code> arrives, every sum that was already possible can also be reached with <code>x</code> added, as long as the new sum does not pass <code>T</code>.</p>
+    <p>Scan the sums from <code>T</code> downward. A forward scan would reuse <code>x</code> inside the same round, which is the unbounded (coin-change) version of the problem.</p>
+
+    <h2>Recurrence</h2>
+    <p><code>dp[0] = true</code></p>
+    <p>After considering number <code>x</code>, for <code>t</code> from <code>T</code> down to <code>x</code>:</p>
+    <p><code>dp[t] = dp[t] or dp[t - x]</code></p>
+    <p>The answer is <code>dp[T]</code>.</p>
+
+    <h2>Algorithm</h2>
+    <ol>
+      <li>Make a boolean array of length <code>T + 1</code>, with only index 0 set.</li>
+      <li>For each number, update achievable sums from the target downward.</li>
+      <li>Read <code>dp[T]</code>.</li>
+    </ol>
+
+    <h2>Worked example</h2>
+    <p>Numbers <code>[3, 4, 5]</code>, target <code>9</code>. <code>4 + 5</code> works.</p>
+    <table>
+      <thead>
+        <tr><th>after</th><th>reachable sums</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>start</td><td>0</td></tr>
+        <tr><td>3</td><td>0, 3</td></tr>
+        <tr><td>4</td><td>0, 3, 4, 7</td></tr>
+        <tr><td>5</td><td>0, 3, 4, 5, 7, 8, 9</td></tr>
+      </tbody>
+    </table>
+    <p><code>9</code> appears when 5 is added to the already reachable 4. <code>dp[9]</code> is true.</p>
+
+    <h2>Complexity</h2>
+    <p>Time <code>O(n · T)</code>. Space <code>O(T)</code>.</p>
+
+    <h2>Python</h2>
+    <pre><code>def subset_sum(nums, target):
+    dp = [False] * (target + 1)
+    dp[0] = True
+    for x in nums:
+        for t in range(target, x - 1, -1):
+            dp[t] = dp[t] or dp[t - x]
+    return dp[target]</code></pre>
+  </main>
+</body>
+</html>
